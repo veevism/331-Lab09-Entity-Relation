@@ -36,7 +36,6 @@ public class EventDaoImpl implements EventDao {
                                 .date("January 28, 2022")
                                 .time("12:00")
                                 .petAllowed(true)
-                                .organizer("Kat Laydee")
                                 .build());
 
                 eventList.add(Event.builder()
@@ -48,7 +47,6 @@ public class EventDaoImpl implements EventDao {
                                 .date("March 14, 2022")
                                 .time("10:00")
                                 .petAllowed(true)
-                                .organizer("Fern Pollin")
                                 .build());
 
                 eventList.add(Event.builder()
@@ -60,7 +58,6 @@ public class EventDaoImpl implements EventDao {
                                 .date("July 30, 2022")
                                 .time("14:00")
                                 .petAllowed(false)
-                                .organizer("Melody Maestro")
                                 .build());
 
                 eventList.add(Event.builder()
@@ -72,7 +69,6 @@ public class EventDaoImpl implements EventDao {
                                 .date("April 18, 2022")
                                 .time("09:30")
                                 .petAllowed(false)
-                                .organizer("Hoops League")
                                 .build());
 
                 eventList.add(Event.builder()
@@ -84,7 +80,6 @@ public class EventDaoImpl implements EventDao {
                                 .date("May 25, 2022")
                                 .time("11:00")
                                 .petAllowed(true)
-                                .organizer("Artistic Expressions")
                                 .build());
 
                 eventList.add(Event.builder()
@@ -96,7 +91,6 @@ public class EventDaoImpl implements EventDao {
                                 .date("September 10, 2022")
                                 .time("13:30")
                                 .petAllowed(false)
-                                .organizer("TechConnect")
                                 .build());
         }
 

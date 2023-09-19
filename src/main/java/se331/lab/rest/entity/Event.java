@@ -1,5 +1,7 @@
 package se331.lab.rest.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,5 +31,6 @@ public class Event {
     String date;
     String time;
     Boolean petAllowed;
-    String organizer;
+    Organizer organizer;
+    List<Participant> participants;
 }
