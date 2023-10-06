@@ -7,6 +7,8 @@ import org.mapstruct.factory.Mappers;
 
 import se331.lab.rest.entity.Event;
 import se331.lab.rest.entity.EventDTO;
+import se331.lab.rest.entity.Organizer;
+import se331.lab.rest.entity.OrganizerDTO;
 
 @Mapper
 public interface LabMapper {
@@ -15,4 +17,9 @@ public interface LabMapper {
     EventDTO getEventDto(Event event);
 
     List<EventDTO> getEventDto(List<Event> events);
+
+    OrganizerDTO getOrganizerDTO(Organizer organizer);
+
+    List<OrganizerDTO> getOrganizerDTO(List<Organizer> organizers);
+
 }
