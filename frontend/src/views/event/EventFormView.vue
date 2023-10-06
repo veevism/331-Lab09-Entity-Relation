@@ -5,9 +5,20 @@ import EventService from '@/services/EventService';
 import { useRouter } from 'vue-router'
 import { useMessageStore } from '@/stores/message'
 import BaseInput from '@/components/BaseInput.vue';
+import OrganizerService from '@/services/OrganizerService';
 const store = useMessageStore()
 
 const router = useRouter()
+
+const organizers = ref<EventOrganizer[]>([])
+OrganizerService.getOrganizers()
+    .then((response) => {
+        organizers.value = response.data
+    })
+    .catch(() => {
+        router.push({ name: 'network-error' })
+    })
+
 
 function saveEvent() {
     EventService.saveEvent(event.value)
@@ -55,6 +66,15 @@ const event = ref<EventItem>({
             <h3>Where is your event?</h3>
 
             <BaseInput v-model="event.location" type="text" label="Location" />
+
+            <h3>Who is your organizer?</h3>
+            <label>Select an Organizer</label>
+            <select v-model="event.organizer.id">
+                <option v-for="option in organizers" :value="option.id" :key="option.id"
+                    :selected="option.id === event.organizer.id">
+                    {{ option.name }}
+                </option>
+            </select>
             <button type="submit">Submit</button>
         </form>
 
